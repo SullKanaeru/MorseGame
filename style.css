@@ -48,7 +48,7 @@ body {
 }
 
 .portofolio {
-    margin-top: 7%;
+    margin-top: 10%;
     margin-left: 80%;
     margin-bottom: 0;
     width: 240px;
@@ -80,7 +80,7 @@ body {
 
 .namagame {
     margin-top: 40px;
-    width: 990px;
+    width: 800px;
 }
 
 .judul {
@@ -265,7 +265,7 @@ p {
     * {
         margin: 0;
         padding: 0;
-        overflow-x: hidden;
+        overflow: hidden;
     }
 
     .mainmenu {
@@ -276,11 +276,11 @@ p {
     }
     
     .namagame {
-        width: 300px;
+        width: 250px;
     }
 
     .judul {
-        font-size: 15px;
+        font-size: 10px;
     }
 
     .gas {
