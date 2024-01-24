@@ -167,6 +167,7 @@ function gas(){
     main_page.style.display = 'none';
     all_page.style.display = 'flex';
     body.style.overflowY = 'visible';
+    body.style.overflowX = 'none';
 
     if(interval){
         return
@@ -179,6 +180,7 @@ function portofolioku() {
     dataZulhan.style.display = 'flex';
     main_page.style.display = 'none';
     biodeveloper.style.display = 'flex';
+    body.style.overflow = 'none';
 }
 
 //Function untuk memunculkan kembali ke halaman beranda
@@ -186,7 +188,7 @@ function backtohome() {
     dataZulhan.style.display = 'none';
     main_page.style.display = 'flex';
     biodeveloper.style.display = 'none';
-
+    body.style.overflow = 'none';
 }
 
 
