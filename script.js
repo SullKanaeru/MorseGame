@@ -2,7 +2,7 @@ const container = document.querySelector(".container");
 container.style.display = 'none';
 
 //Declaration for game
-const words = ["capcipcupcepcop", "kincirangin", "kapalkecil", "technofest", "stiki2024", "dkvolution", "badebombum", "hadohhaihehe"];
+const words = ["capcipcupcepcop", "lambemuilodek", "kapalkecilayah", "technofestasik", "averosfair2024", "janganlupabahagia", "badebombumbimbam", "hahihuhehohau"];
 const morseCode = {
     "a": ".-",
     "b": "-...",
@@ -43,13 +43,13 @@ const morseCode = {
 };
 
 
-//Script for the game
-// Get random word
+//Script untuk game
+// function untuk kata random dari array words
 function getRandomWord() {
     return words[Math.floor(Math.random() * words.length)];
 }
 
-// Get morse code for a word
+// function untuk menentukan apa kode morse untuk kata yang didapatkan 
 function getMorseCode(word) {
     let morseCodeArr = [];
     for (let i = 0; i < word.length; i++) {
@@ -61,36 +61,36 @@ function getMorseCode(word) {
 }
 
 
-// Check if the user's input is correct
+// Function untuk cek kebenaran jawaban
 function checkAnswer(input, answer) {
     return input.trim() === answer.trim();
 }
 
-// Update the DOM
+// Function untuk update DOM
 function updateDOM(result) {
     let resultElement = document.getElementById("result");
     resultElement.innerHTML = result;
 }
 
-// Generate a random word and set it in the DOM
+// Mengambil kata sembarang di array words dan ditampilkan di class word
 let word = getRandomWord();
 let wordElement = document.getElementById("word");
 wordElement.innerHTML = word;
 
-// Get the answer
+// Mengambil jawaban
 let answer = getMorseCode(word);
 
-// When the user clicks the button
+// Function agar user dapat click button untuk periksa jawaban
 let submitButton = document.getElementById("submit");
 let hasil = document.querySelector(".game");
 let valuehasil = document.createElement("p");
 
 submitButton.addEventListener("click", function() {
-    // Get the user's input
+    // Mengambil input user
     let input = document.getElementById("input").value;
-    // Check the answer
+    // cek jawaban
     let isCorrect = checkAnswer(input, answer);
-    // Update the DOM with the result
+    // Update DOM berdasarkan kebenaran jawaban
     if (isCorrect) {
         valuehasil.classList.add("valuehasilbenar"); 
         valuehasil.textContent = "Jawaban anda benar! Selamatttt";
@@ -108,21 +108,21 @@ submitButton.addEventListener("click", function() {
 });
 
 
-//Declaration for timer
+//Settingan waktu -> Di sini apabila ingin mensetting waktu
 const time_el = document.querySelector('.watch .time');
 const watchBox = document.querySelector('.watch');
 const start_btn = document.getElementById('#start');
 const stop_btn = document.getElementById('#stop');
-//Script for the timer
-//Event listener
 
-let seconds = 90;
+//Script untuk timer
+
+let seconds = 120; // -> ubah bagian ini untuk mengubah batas waktu timer
 let interval = null;
-//Update the timer
+
 function timer(){
     seconds--;
 
-    //Formatting the timer
+    //Format timer
     let mins = Math.floor(seconds / 60);
     let secs = seconds % 60;
 
@@ -153,18 +153,82 @@ function timer(){
 };
 
 
-//Declaration for mainmenu
+//Settingan untuk perubahan tampilan di website
 const gas_btn = document.querySelector('.gas');
 const main_page = document.querySelector('.mainmenu');
-const all_page = document.querySelector('.container')
+const all_page = document.querySelector('.container');
+const body = document.querySelector('body');
+const dataZulhan = document.querySelector('.fotoku');
+const biodeveloper = document.querySelector('.infoPembuat');
 
-//Script for mainmenu
+
+//Function untuk memunculkan halaman game
 function gas(){
     main_page.style.display = 'none';
     all_page.style.display = 'flex';
+    body.style.overflowY = 'visible';
 
     if(interval){
         return
     }
     interval = setInterval(timer, 1000);
 }
+
+//Function untuk memunculkan halaman profil developer
+function portofolioku() {
+    dataZulhan.style.display = 'flex';
+    main_page.style.display = 'none';
+    biodeveloper.style.display = 'flex';
+}
+
+//Function untuk memunculkan kembali ke halaman beranda
+function backtohome() {
+    dataZulhan.style.display = 'none';
+    main_page.style.display = 'flex';
+    biodeveloper.style.display = 'none';
+
+}
+
+
+// Settingan untuk wallpaper bergerak (Rain Code)
+let isMouseMoving = false;
+
+function createSymbol(x, y, delay) {
+    const symbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()-_=+[{]}|;:,<.>/?`~!@#$%^&*()-_=+[{]}|;:,<.>/?`~';
+    const symbol = symbols.charAt(Math.floor(Math.random() * symbols.length));
+
+    const symbolElement = document.createElement('div');
+    symbolElement.className = 'symbol';
+    symbolElement.textContent = symbol;
+    symbolElement.style.left = x + 'px';
+    symbolElement.style.top = y + 'px';
+    document.body.appendChild(symbolElement);
+
+    setTimeout(() => {
+        document.body.removeChild(symbolElement);
+    }, 5000);
+}
+
+function handleMouseMove(event) {
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    if (!isMouseMoving) {
+        const delay = 100;
+        createSymbol(mouseX, mouseY, delay);
+        isMouseMoving = true;
+
+        setTimeout(() => {
+            isMouseMoving = false;
+        }, delay);
+    }
+}
+
+setInterval(() => {
+    const delay = 100;
+    createSymbol(Math.random() * window.innerWidth, Math.random() * window.innerHeight, delay);
+    createSymbol(Math.random() * window.innerWidth, Math.random() * window.innerHeight, delay);
+    createSymbol(Math.random() * window.innerWidth, Math.random() * window.innerHeight, delay);
+}, 500);
+
+document.addEventListener('mousemove', handleMouseMove);
