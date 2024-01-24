@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/6f3103b13c.js" crossorigin="anonymus"></script>
+    <title>Ave Morse Game</title>
+</head>
+<body>
+    <div class="mainmenu">
+        <img class="namagame" src="source/judulgame.png" alt="">
+        <h2 class="judul">Barudak sudah siap bermain?</h2>
+        <button class="gas" onclick="gas()">Mulai Game</button>
+    </div>
+    
+    <div class="container">
+        <div class="game">
+            <h1 class="judulcontain">AV Morse Code Game</h1>
+            <p class="kata">Coba  tebak  apa  kode  morse  dari  kata ini.</p>
+            <p class="kata">Coba tebak kata: <span id="word"></span></p>
+            <div class="input">
+                <input type="text" id="input" placeholder="Masukkan kode morsenya">
+                <button id="submit">Cek!</button>
+            </div>
+            <p id="result"></p>
+        </div>
+
+        <div class="watch">
+            <div class="time">
+                00:00
+        </div>
+    </div>
+
+    <div class="morseimg">
+        <img class="img" src="source/morsecode.png" alt="morsecode">
+    </div>
+    
+    
+    <script src="script.js"></script>
+</body>
+
+
+</html>

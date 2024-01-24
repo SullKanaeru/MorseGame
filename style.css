@@ -1,0 +1,181 @@
+@font-face {
+    font-family: morsefont;
+    src: url('source/morsefont.ttf');
+}
+
+* {
+    color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("source/wp.png");
+}
+
+.mainmenu {
+    font-family: 'morsefont';
+    letter-spacing: 10px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    font-size: large;
+}
+
+.namagame {
+    margin-top: 40px;
+    height: 30%;
+}
+
+.judul {
+    font-family: morsefont;
+    margin: 5rem auto 3rem;
+}
+
+.gas {
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+    color: white;
+    background-color: #0066ffff;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: 0.4s;
+    font-size: 30px;
+    font-family: 'morsefont';
+    letter-spacing: 10px;
+}
+
+.container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.img{
+    width: 350px;
+    top: 150px;
+    right: 550px;
+}
+
+.game {
+    display: flex;
+    width: 100%;
+    margin: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.valuehasilsalah{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    width: max-content;
+    background-color: brown;
+}
+
+.valuehasilbenar{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    width: max-content;
+    background-color: lightseagreen;
+}
+
+.judulcontain {
+    font-family: morsefont;
+    font-size: 60px;
+    margin-bottom: 2rem;
+    letter-spacing: 10px;
+    color: #057CEF;
+}
+
+#word{
+    color: red;
+}
+
+input {
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 2rem;
+    color: black;
+}
+
+.kata{
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+p {
+    font-size: 25px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#input {
+    width: 10cm;
+    height: 1cm;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#submit {
+    background-color: #057CEF;
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0px solid #ccc;
+    transition: 0.4s;
+}
+
+#result {
+    font-size: 20px;
+}
+
+.watch {
+    display: flex;
+    bottom: 0.1rem;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 15rem;
+    height: 100px;
+    background-color: #0066ffff;
+    margin: 15rem  auto 5rem;
+    align-self: flex-end;
+    border-radius: 1rem;
+}
+
+.time {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 4.5rem;
+    font-weight: 300;
+}
+
+.gas:hover, #submit:hover {
+    background-color: rgb(93, 156, 251);
+}
+
+.gas:active, #submit:active{
+    transform: scale(0.8);
+}
