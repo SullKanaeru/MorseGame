@@ -103,6 +103,10 @@ kataRandom.innerHTML = kataTerpilih;
 // Mengambil jawaban
 let answer = ambilKodeMorse(kataTerpilih);
 
+console.log();
+console.log(answer);
+console.log(kataTerpilih);
+
 // function untuk mengambil kata random dari array kumpulanKata
 function ambilKataRandom() {
     return kumpulanKata[Math.floor(Math.random() * kumpulanKata.length)];
@@ -112,12 +116,14 @@ function ambilKataRandom() {
 function ambilKodeMorse(kataTerpilih) {
     let morseCodeArr = [];
     for (let i = 0; i < kataTerpilih.length; i++) {
-        if (morseCode[kataTerpilih[i]]) {
-            morseCodeArr.push(morseCode[kataTerpilih[i]]);
+        let lowercaseChar = kataTerpilih[i].toLowerCase(); // Konversi ke huruf kecil
+        if (morseCode[lowercaseChar]) {
+            morseCodeArr.push(morseCode[lowercaseChar]);
         }
     }
     return morseCodeArr.join(" ");
 }
+
 
 // Function agar user dapat click button untuk periksa jawaban
 let btn_submit = document.getElementById("submit");
@@ -152,6 +158,7 @@ btn_submit.addEventListener("click", function() {
 // Function untuk cek kebenaran jawaban
 function cekJawaban(input, answer) {
     return input.trim() === answer.trim();
+
 }
 
 
