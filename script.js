@@ -6,9 +6,9 @@ const body = document.querySelector('body');
 const dataZulhan = document.querySelector('.fotoku');
 const profilpage = document.querySelector('.profilpage');
 
-homepage.style.display = 'flex';
+homepage.style.display = 'none';
 gamepage.style.display = 'none';
-profilpage.style.display = 'none';
+profilpage.style.display = 'flex';
 
 //Settingan untuk perubahan tampilan di website
 //Function untuk memunculkan halaman game
@@ -25,8 +25,7 @@ function homeToGame(){
 }
 
 //Function untuk memunculkan halaman profil developer
-function portofolioku() {
-    dataZulhan.style.display = 'flex';
+function homeToProfil() {
     homepage.style.display = 'none';
     profilpage.style.display = 'flex';
     body.style.overflow = 'none';
@@ -34,7 +33,6 @@ function portofolioku() {
 
 //Function untuk memunculkan kembali ke halaman beranda
 function backtohome() {
-    dataZulhan.style.display = 'none';
     homepage.style.display = 'flex';
     profilpage.style.display = 'none';
     body.style.overflow = 'none';
